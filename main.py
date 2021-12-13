@@ -15,7 +15,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # import library for build model 
-from tensorflow import keras
+from keras.models import load_model
 
 
 # import library untuk data preprocessing
@@ -41,9 +41,9 @@ def load_data(ticker):
 model_toload = ('RNN', 'LSTM')
 selected_model= st.selectbox('Pilih model ', model_toload)
 
-def load_model(stock_name,model_name):
+def model_load(stock_name,model_name):
 	filepath = "models/"+stock_name+"_"+model_name+".h5"
-	model = keras.models.load_model(filepath)
+	model = load_model(filepath)
 
 	return model
 	
@@ -51,7 +51,7 @@ data_load_state = st.text('Loading data...')
 data = load_data(selected_stock)
 data_load_state.text('Loading data... done!')
 model_load_state = st.text('Loading model...')
-model_set = load_model(selected_stock,selected_model)
+model_set = model_load(selected_stock,selected_model)
 model_load_state.text('Loading model... done!')
 
 st.subheader('Raw data')
