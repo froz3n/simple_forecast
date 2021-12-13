@@ -1,4 +1,4 @@
 # simple_forecast
-Simple forecasting with RNN and LSTM\n
-using Streamlit framework and deploted on Heroku\n
+Simple forecasting with RNN and LSTM
+using Streamlit framework and deploted on Heroku
 https://simple-forecasting.herokuapp.com/
